@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #f5f5f5;
+
+  --orange-primary: #ff5a1f;
+  --orange-secondary: #ff3b00;
+
+  --zinc-muted: #a1a1aa;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  --font-heading: var(--font-clash);
+  --font-body: var(--font-inter);
+}
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.04em;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* SELECTION */
+
+::selection {
+  background: var(--orange-primary);
+  color: white;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 90, 31, 0.6);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 90, 31, 0.9);
+}
+
+/* PREMIUM BACKGROUND */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255,90,31,0.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255,59,0,0.14), transparent 35%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* UTILITY CLASSES */
+
+.container-custom {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section-spacing {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+}
+
+.orange-glow {
+  box-shadow:
+    0 0 40px rgba(255, 90, 31, 0.25),
+    0 0 120px rgba(255, 90, 31, 0.15);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #ffb08f
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SMOOTH IMAGE RENDERING */
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* REMOVE TAP HIGHLIGHT */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
