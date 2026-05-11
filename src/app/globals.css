@@ -84,8 +84,8 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 80px 80px;
   pointer-events: none;
   z-index: -2;
@@ -96,8 +96,8 @@ body::after {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at top right, rgba(255,90,31,0.18), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(255,59,0,0.14), transparent 35%);
+    radial-gradient(circle at top right, rgba(255, 90, 31, 0.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255, 59, 0, 0.14), transparent 35%);
   pointer-events: none;
   z-index: -1;
 }
@@ -117,8 +117,8 @@ body::after {
 }
 
 .glass-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
 }
 
@@ -129,12 +129,9 @@ body::after {
 }
 
 .text-gradient {
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #ffb08f
-  );
+  background: linear-gradient(to right, #fff, #ffb08f);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -153,6 +150,12 @@ a {
 }
 
 canvas {
+  display: block;
   width: 100% !important;
   height: 100% !important;
 }
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+

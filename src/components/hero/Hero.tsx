@@ -30,13 +30,13 @@ export default function Hero() {
                     </div>
 
                     {/* Heading */}
-                    <h1 className="text-[48px] font-semibold leading-[0.92] tracking-tight sm:text-[64px] md:text-[80px] lg:text-[96px]">
+                    <h1 className="text-[48px] font-semibold leading-[0.92] tracking-tight sm:text-[64px] md:text-[80px] lg:text-[96px]  pt-8 pb-8">
                         Protect <br />
                         Before <span className="text-orange-500">Fire</span> Wins.
                     </h1>
 
                     {/* Description */}
-                    <p className="mt-8 max-w-xl text-base leading-8 text-zinc-400 sm:text-lg">
+                    <p className="!mt-4 !mb-4 pt-8 pb-8 max-w-xl text-base leading-8 text-zinc-400 sm:text-lg">
                         Advanced fire safety systems engineered for industrial,
                         commercial and enterprise environments across India.
                     </p>
@@ -45,7 +45,7 @@ export default function Hero() {
                     <div className="mt-10 flex flex-wrap gap-4">
 
                         {/* Primary */}
-                        <button className="group flex items-center gap-2 rounded-full bg-orange-500 px-7 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-400">
+                        <button className="group flex items-center gap-2 rounded-full bg-orange-500 !px-6 !py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-400">
                             Request Inspection
 
                             <ArrowRight
@@ -55,13 +55,13 @@ export default function Hero() {
                         </button>
 
                         {/* Secondary */}
-                        <button className="rounded-full border border-white/10 bg-white/5 px-7 py-4 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-orange-500/30 hover:bg-orange-500/10">
+                        <button className="rounded-full border border-white/10 bg-white/5 !px-6 !py-3 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-orange-500/30 hover:bg-orange-500/10">
                             Explore Systems
                         </button>
                     </div>
 
                     {/* Stats */}
-                    <div className="mt-16 flex flex-wrap gap-10">
+                    <div className="!mt-6 flex flex-wrap gap-10">
 
                         <div>
                             <h3 className="text-3xl font-semibold text-orange-500">
