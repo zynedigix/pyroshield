@@ -1,25 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaFireExtinguisher, FaShieldAlt, FaBell } from "react-icons/fa";
 
 const showcaseItems = [
   {
     title: "Smart Fire Detection",
-    description:
-      "AI-powered fire detection systems designed for modern Indian commercial infrastructures.",
-    number: "01",
+    image: "/images/fire/fire-01-smart-detection.webp",
   },
   {
     title: "Industrial Grade Protection",
-    description:
-      "Advanced suppression systems engineered for factories, warehouses and enterprise facilities.",
-    number: "02",
+    image: "/images/fire/fire-02-industrial-protection.webp",
   },
   {
     title: "24/7 Emergency Response",
-    description:
-      "Rapid emergency support and maintenance services ensuring continuous operational safety.",
-    number: "03",
+    image: "/images/fire/fire-03-emergency-response.webp",
   },
 ];
 
@@ -105,29 +100,29 @@ export default function StickyShowcase() {
                   {/* Glow */}
                   <div className="absolute h-[420px] w-[420px] rounded-full bg-orange-500/20 blur-[120px]" />
 
-                  {/* Premium Card */}
-                  <div className="glass-card orange-glow relative flex h-[500px] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-[40px] border border-orange-500/10">
+                  {/* CARD */}
+                  <div className="glass-card orange-glow relative h-[500px] w-full max-w-[520px] overflow-hidden rounded-[40px] border border-orange-500/10">
 
-                    {/* Animated Gradient */}
-                    <div className="absolute inset-0 bg-[linear-gradient(135deg,#ff5a1f10,transparent_40%,#ffffff05)]" />
-
-                    {/* Number */}
-                    <h1 className="font-heading text-[140px] font-semibold leading-none tracking-tight text-white/10">
-                      {item.number}
-                    </h1>
-
-                    {/* Floating Orb */}
-                    <motion.div
-                      animate={{
-                        y: [0, -20, 0],
-                      }}
-                      transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                      className="absolute h-40 w-40 rounded-full bg-orange-500/30 blur-3xl"
+                    {/* IMAGE GOES HERE 👇 */}
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-full w-full object-cover scale-105 transition-transform duration-700 hover:scale-110"
                     />
+
+                    {/* Gradient overlay (keeps text readable) */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                    {/* Bottom text */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <p className="text-orange-400 text-sm tracking-widest">
+                        {item.number}
+                      </p>
+                      <h3 className="text-white text-xl font-semibold">
+                        {item.title}
+                      </h3>
+                    </div>
+
                   </div>
                 </motion.div>
               </div>

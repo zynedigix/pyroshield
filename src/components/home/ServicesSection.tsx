@@ -1,51 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import {
-  ShieldCheck,
-  Flame,
-  BellRing,
-  Building2,
-  Siren,
-  ScanSearch,
-} from "lucide-react";
+  FaBroadcastTower,
+  FaShieldAlt,
+  FaBell,
+} from "react-icons/fa";
 
 const services = [
   {
-    icon: BellRing,
-    title: "Fire Alarm Systems",
+    title: "Smart Fire Detection",
     description:
-      "Advanced intelligent alarm systems designed for rapid fire detection and emergency alerts.",
+      "AI-powered fire and smoke monitoring systems engineered for intelligent early threat detection.",
+    icon: FaBroadcastTower,
   },
   {
-    icon: Flame,
-    title: "Sprinkler Systems",
+    title: "Industrial Grade Protection",
     description:
-      "Automated suppression systems engineered for industrial and enterprise-level safety.",
+      "Enterprise fire suppression systems designed for mission-critical industrial infrastructures.",
+    icon: FaShieldAlt,
   },
   {
-    icon: ShieldCheck,
-    title: "AMC Maintenance",
+    title: "24/7 Emergency Response",
     description:
-      "Comprehensive annual maintenance services ensuring continuous fire safety readiness.",
-  },
-  {
-    icon: Building2,
-    title: "Hydrant Systems",
-    description:
-      "Industrial-grade hydrant solutions for commercial buildings and factories.",
-  },
-  {
-    icon: ScanSearch,
-    title: "Smoke Detection",
-    description:
-      "Smart smoke monitoring systems powered for high-accuracy environmental safety.",
-  },
-  {
-    icon: Siren,
-    title: "Emergency Planning",
-    description:
-      "Evacuation systems and emergency preparedness planning for modern infrastructures.",
+      "Rapid-response emergency support teams delivering continuous protection and operational safety.",
+    icon: FaBell,
   },
 ];
 
@@ -87,46 +67,54 @@ export default function ServicesSection() {
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
           {services.map((service, index) => {
-            const Icon = service.icon;
+            const IconComponent = service.icon;
 
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 80 }}
+                initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.7,
-                  delay: index * 0.08,
+                  delay: index * 0.15,
                 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:border-orange-500/20 hover:bg-white/[0.05]"
+                className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-white/[0.03] p-10 backdrop-blur-xl transition-all duration-500 hover:border-orange-500/20 hover:bg-orange-500/[0.04]"
               >
 
                 {/* Glow */}
-                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-orange-500/10 blur-3xl" />
-                </div>
+                <div className="absolute right-0 top-0 h-40 w-40 bg-orange-500/10 blur-[100px] transition-all duration-500 group-hover:bg-orange-500/20" />
 
-                {/* Icon */}
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-orange-500/10 bg-orange-500/10 text-orange-400">
+                {/* Floating Icon */}
+                <motion.div
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="relative mb-10 flex h-20 w-20 items-center justify-center rounded-3xl border border-orange-500/20 bg-orange-500/10 backdrop-blur-xl"
+                >
 
-                  <Icon size={30} />
-                </div>
+                <div className="absolute inset-0 rounded-3xl bg-orange-500/20 blur-2xl" />
 
-                {/* Content */}
-                <div className="relative z-10 mt-8">
+                <IconComponent className="relative z-20 text-[36px] text-white drop-shadow-[0_0_20px_rgba(255,90,31,0.8)]" />
+                </motion.div>
 
-                  <h3 className="font-heading text-3xl tracking-tight text-white">
-                    {service.title}
-                  </h3>
+                {/* Title */}
+                <h3 className="relative z-10 text-3xl font-semibold tracking-tight text-white">
+                  {service.title}
+                </h3>
 
-                  <p className="mt-5 text-base leading-8 text-zinc-400">
-                    {service.description}
-                  </p>
-                </div>
+                {/* Description */}
+                <p className="relative z-10 mt-6 text-base leading-8 text-zinc-400">
+                  {service.description}
+                </p>
 
-                {/* Hover Border Glow */}
-                <div className="absolute inset-0 rounded-[32px] border border-transparent transition-all duration-500 group-hover:border-orange-500/20" />
+                {/* Bottom Line */}
+                <div className="relative z-10 mt-10 h-[1px] w-20 bg-gradient-to-r from-orange-500/60 to-transparent" />
               </motion.div>
             );
           })}

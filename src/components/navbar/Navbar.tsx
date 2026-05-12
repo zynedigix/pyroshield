@@ -4,13 +4,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
-  "Services",
-  "Products",
-  "Industries",
-  "About",
-  "Contact",
-];
+const navLinks = ["Services", "Products", "Industries", "About", "Contact"];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,14 +12,11 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -34,7 +25,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 z-50 w-full transition-all duration-500 ${
           isScrolled
-            ? "border-b border-white/10 bg-black/40 backdrop-blur-xl"
+            ? "bg-black/60 backdrop-blur-xl border-b border-white/10"
             : "bg-transparent"
         }`}
       >
@@ -42,71 +33,67 @@ export default function Navbar() {
 
           {/* LOGO */}
           <div className="flex items-center gap-3">
-            <div className="orange-glow h-3 w-3 rounded-full bg-orange-500" />
+            <div className="h-2.5 w-2.5 rounded-full bg-orange-500 shadow-[0_0_15px_rgba(255,90,31,0.8)]" />
 
-            <h2 className="font-heading text-xl font-semibold tracking-tight text-white">
+            <h2 className="text-lg font-semibold tracking-tight text-white">
               PyroShield
             </h2>
           </div>
 
-          {/* DESKTOP NAVIGATION */}
-          <nav className="hidden items-center gap-10 lg:flex">
+          {/* DESKTOP NAV */}
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((item) => (
               <a
                 key={item}
                 href="#"
-                className="text-sm font-medium text-zinc-300 transition-all duration-300 hover:text-orange-400"
+                className="text-sm text-zinc-300 transition-all duration-300 hover:text-orange-400"
               >
                 {item}
               </a>
             ))}
           </nav>
 
-          {/* DESKTOP CTA BUTTON */}
+          {/* CTA */}
           <div className="hidden lg:flex">
-            <button className="inline-flex h-14 items-center justify-center rounded-full bg-orange-500 px-8 text-sm font-semibold text-white transition-all duration-300 hover:bg-orange-400 hover:shadow-[0_0_30px_rgba(255,90,31,0.4)]">
+            <button className="h-11 px-6 rounded-full bg-orange-500 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-600 hover:shadow-[0_0_25px_rgba(255,90,31,0.4)]">
               Get Quote
             </button>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE BUTTON */}
           <button
             onClick={() => setMobileMenu(!mobileMenu)}
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-md transition-all duration-300 hover:border-orange-500/30 hover:bg-orange-500/10 lg:hidden"
+            className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white backdrop-blur-md"
           >
-            {mobileMenu ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenu ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </header>
 
-      {/* MOBILE MENU OVERLAY */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {mobileMenu && (
           <motion.div
-            initial={{ opacity: 0, y: -40 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0.35 }}
-            className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-red-500 backdrop-blur-2xl lg:hidden"
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-black/90 backdrop-blur-2xl lg:hidden"
           >
+            <div className="flex flex-col items-center gap-8">
 
-            {/* MOBILE MENU CONTENT */}
-            <div className="flex flex-col items-center gap-10">
-
-              {/* MOBILE NAV LINKS */}
               {navLinks.map((item) => (
                 <a
                   key={item}
                   href="#"
                   onClick={() => setMobileMenu(false)}
-                  className="text-3xl font-medium tracking-tight text-white transition-all duration-300 hover:text-orange-400"
+                  className="text-2xl font-medium text-white hover:text-orange-400 transition"
                 >
                   {item}
                 </a>
               ))}
 
-              {/* MOBILE CTA BUTTON */}
-              <button className="inline-flex h-16 items-center justify-center rounded-full bg-red-500 px-12 text-2xl font-bold text-white">
+              <button className="mt-6 h-12 px-8 rounded-full bg-orange-500 text-white font-medium hover:bg-orange-600 transition">
                 Get Quote
               </button>
 
