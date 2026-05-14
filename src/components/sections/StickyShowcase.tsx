@@ -5,15 +5,24 @@ import { FaFireExtinguisher, FaShieldAlt, FaBell } from "react-icons/fa";
 
 const showcaseItems = [
   {
+    number: "01",
     title: "Smart Fire Detection",
+    description:
+      "AI-powered fire detection systems designed for modern commercial infrastructure.",
     image: "/images/fire/fire-01-smart-detection.webp",
   },
   {
+    number: "02",
     title: "Industrial Grade Protection",
+    description:
+      "Enterprise-grade suppression systems engineered for factories and warehouses.",
     image: "/images/fire/fire-02-industrial-protection.webp",
   },
   {
+    number: "03",
     title: "24/7 Emergency Response",
+    description:
+      "Rapid emergency support and continuous monitoring for mission-critical facilities.",
     image: "/images/fire/fire-03-emergency-response.webp",
   },
 ];
@@ -72,12 +81,12 @@ export default function StickyShowcase() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
                   viewport={{ once: false, amount: 0.4 }}
-                  className="flex flex-col justify-center"
+                  className="flex flex-col justify-center md:!pt-24"
                 >
 
-                  <span className="mb-6 text-sm uppercase tracking-[0.4em] text-orange-400">
+                  {/* <span className="mb-6 text-sm uppercase tracking-[0.4em] text-orange-400">
                     {item.number}
-                  </span>
+                  </span> */}
 
                   <h3 className="font-heading text-5xl leading-[1] tracking-tight text-white md:text-7xl sm:!pt-6px">
                     {item.title}
@@ -101,7 +110,7 @@ export default function StickyShowcase() {
                   <div className="absolute h-[420px] w-[420px] rounded-full bg-orange-500/20 blur-[120px]" />
 
                   {/* CARD */}
-                  <div className="glass-card orange-glow relative h-[500px] w-full max-w-[520px] overflow-hidden rounded-[40px] border border-orange-500/10">
+                  <div className="glass-card orange-glow relative h-[320px] sm:h-[380px] md:h-[420px] lg:h-[500px] 2xl:h-[560px] w-full max-w-[340px] sm:max-w-[420px] md:max-w-[460px] lg:max-w-[520px] overflow-hidden rounded-[40px] border border-orange-500/10">
 
                     {/* IMAGE GOES HERE 👇 */}
                     <img
@@ -115,9 +124,9 @@ export default function StickyShowcase() {
 
                     {/* Bottom text */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                      <p className="text-orange-400 text-sm tracking-widest">
+                      {/* <p className="text-orange-400 text-sm tracking-widest">
                         {item.number}
-                      </p>
+                      </p> */}
                       <h3 className="text-white text-xl font-semibold !pl-6 !pb-6">
                         {item.title}
                       </h3>
