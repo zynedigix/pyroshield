@@ -4,7 +4,13 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = ["Services", "Products", "Industries", "About", "Contact"];
+const navLinks = [
+  { name: "Services", href: "#services" },
+  { name: "Products", href: "#products" },
+  { name: "Industries", href: "#industries" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
+];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,20 +50,23 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((item) => (
               <a
-                key={item}
-                href="#"
+                key={item.name}
+                href={item.href}
                 className="text-sm text-zinc-300 transition-all duration-300 hover:text-orange-400"
               >
-                {item}
+                {item.name}
               </a>
             ))}
           </nav>
 
           {/* CTA */}
           <div className="hidden lg:flex">
-            <button className="h-11 px-6 rounded-full bg-orange-500 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-600 hover:shadow-[0_0_25px_rgba(255,90,31,0.4)]">
-              Get Quote
-            </button>
+            <a
+              href="#contact"
+              className="!px-6 group inline-flex h-12 cursor-pointer items-center gap-2 rounded-full bg-orange-500 px-6 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-400 hover:shadow-[0_0_30px_rgba(255,90,31,0.35)]"
+              >
+                Get Quote
+              </a>
           </div>
 
           {/* MOBILE BUTTON */}
@@ -84,18 +93,21 @@ export default function Navbar() {
 
               {navLinks.map((item) => (
                 <a
-                  key={item}
-                  href="#"
+                  key={item.name}
+                  href={item.href}
                   onClick={() => setMobileMenu(false)}
                   className="text-2xl font-medium text-white hover:text-orange-400 transition"
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
 
-              <button className="mt-6 h-12 px-8 rounded-full bg-orange-500 text-white font-medium hover:bg-orange-600 transition">
+              <a
+              href="#contact"
+              className="!px-6 group inline-flex h-12 cursor-pointer items-center gap-2 rounded-full bg-orange-500 px-6 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-400 hover:shadow-[0_0_30px_rgba(255,90,31,0.35)]"
+              >
                 Get Quote
-              </button>
+              </a>
 
             </div>
           </motion.div>

@@ -22,7 +22,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/5 bg-black pt-24">
+    <footer className="relative overflow-hidden border-t border-white/5 bg-black !pt-24 sm:!pt-16 md:!pt-18 lg:!pt-24 2xl:!pt-24">
 
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,#ff5a1f10,transparent_30%)]" />
@@ -30,7 +30,7 @@ export default function Footer() {
       <div className="container-custom relative z-10">
 
         {/* TOP AREA */}
-        <div className="grid gap-16 border-b border-white/5 pb-16 lg:grid-cols-3">
+        <div className="grid gap-16 border-b border-white/5 pb-16 lg:grid-cols-3 !pb-8">
 
           {/* LEFT */}
           <motion.div
@@ -45,7 +45,7 @@ export default function Footer() {
 
               <div className="h-3 w-3 rounded-full bg-orange-500" />
 
-              <h2 className="font-heading text-3xl tracking-tight text-white">
+              <h2 className="font-heading text-3xl tracking-tight text-white !py-4">
                 PyroShield
               </h2>
             </div>
@@ -68,7 +68,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
 
-            <p className="mb-8 text-sm uppercase tracking-[0.35em] text-orange-400">
+            <p className="mb-8 text-sm uppercase tracking-[0.35em] text-orange-400 !py-4">
               Navigation
             </p>
 
@@ -97,7 +97,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
 
-            <p className="mb-8 text-sm uppercase tracking-[0.35em] text-orange-400">
+            <p className="mb-8 text-sm uppercase tracking-[0.35em] text-orange-400 !py-4">
               Contact
             </p>
 
@@ -108,7 +108,7 @@ export default function Footer() {
 
                 <Phone
                   size={20}
-                  className="mt-1 text-orange-400"
+                  className="!mt-4 text-orange-400"
                 />
 
                 <div>
@@ -127,7 +127,7 @@ export default function Footer() {
 
                 <Mail
                   size={20}
-                  className="mt-1 text-orange-400"
+                  className="!mt-4 text-orange-400"
                 />
 
                 <div>
@@ -146,7 +146,7 @@ export default function Footer() {
 
                 <MapPin
                   size={20}
-                  className="mt-1 text-orange-400"
+                  className="!mt-4 text-orange-400"
                 />
 
                 <div>
@@ -164,7 +164,7 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM AREA */}
-        <div className="flex flex-col items-center justify-between gap-8 py-10 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-8 !py-6 md:flex-row">
 
           {/* Copyright */}
           <p className="text-sm text-zinc-500">

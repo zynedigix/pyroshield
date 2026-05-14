@@ -32,7 +32,7 @@ const industries = [
 
 export default function IndustriesSection() {
   return (
-    <section className="relative overflow-hidden bg-black py-32">
+    <section id="industries" className="relative overflow-hidden bg-black !py-24 sm:!py-16 md:!py-18 lg:!py-24 2xl:!py-24">
 
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#ff5a1f12,transparent_30%)]" />
@@ -45,7 +45,7 @@ export default function IndustriesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-24 max-w-4xl text-center"
+          className="mx-auto mb-24 max-w-4xl text-left"
         >
 
           <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-400">
@@ -58,7 +58,7 @@ export default function IndustriesSection() {
             Critical Infrastructure.
           </h2>
 
-          <p className="mt-8 text-lg leading-8 text-zinc-400">
+          <p className="mt-8 text-lg leading-8 text-zinc-400 !py-4">
             Delivering enterprise-grade fire protection systems across modern
             commercial, industrial and high-risk environments throughout India.
           </p>
@@ -103,7 +103,7 @@ export default function IndustriesSection() {
                 </div>
 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 z-10 p-8">
+                <div className="absolute bottom-0 left-0 z-10 !p-8">
 
                   <p className="mb-3 text-sm uppercase tracking-[0.35em] text-orange-400">
                     Protected Sector

@@ -31,7 +31,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="relative overflow-hidden bg-black py-32">
+    <section id="services" className="relative overflow-hidden bg-black !py-24 sm:!py-16 md:!py-18 lg:!py-24 2xl:!py-24">
 
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#ff5a1f12,transparent_30%)]" />
@@ -44,7 +44,7 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-24 max-w-3xl text-center"
+          className="mx-auto mb-24 max-w-3xl text-left"
         >
 
           <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-400">
@@ -57,7 +57,7 @@ export default function ServicesSection() {
             Infrastructure.
           </h2>
 
-          <p className="mt-8 text-lg leading-8 text-zinc-400">
+          <p className="mt-8 text-lg leading-8 text-zinc-400 !py-6">
             Premium fire protection systems engineered for modern businesses,
             industries and high-performance infrastructures across India.
           </p>
@@ -79,7 +79,7 @@ export default function ServicesSection() {
                   delay: index * 0.15,
                 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-white/[0.03] p-10 backdrop-blur-xl transition-all duration-500 hover:border-orange-500/20 hover:bg-orange-500/[0.04]"
+                className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-white/[0.03] !p-8 backdrop-blur-xl transition-all duration-500 hover:border-orange-500/20 hover:bg-orange-500/[0.04]"
               >
 
                 {/* Glow */}
@@ -104,7 +104,7 @@ export default function ServicesSection() {
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="relative z-10 text-3xl font-semibold tracking-tight text-white">
+                <h3 className="relative z-10 text-3xl font-semibold tracking-tight text-white !py-2">
                   {service.title}
                 </h3>
 

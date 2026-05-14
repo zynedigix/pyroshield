@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen overflow-hidden">
+        <section className="relative !py-24 sm:!py-24 md:!py-26 lg:!py-22 2xl:!py-24 min-h-screen overflow-hidden">
 
             {/* Ambient Glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#ff5a1f22,transparent_30%)]" />
@@ -45,19 +45,24 @@ export default function Hero() {
                     <div className="mt-10 flex flex-wrap gap-4">
 
                         {/* Primary */}
-                        <button className="group flex items-center gap-2 rounded-full bg-orange-500 !px-6 !py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-400">
-                            Request Inspection
-
+                        <a
+                        href="#contact"
+                        className="!px-6 group inline-flex h-12 cursor-pointer items-center gap-2 rounded-full bg-orange-500 px-6 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-400 hover:shadow-[0_0_30px_rgba(255,90,31,0.35)]"
+                        >
+                            Request Consultation
                             <ArrowRight
                                 size={18}
                                 className="transition-transform duration-300 group-hover:translate-x-1"
                             />
-                        </button>
+                        </a>
 
                         {/* Secondary */}
-                        <button className="rounded-full border border-white/10 bg-white/5 !px-6 !py-3 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-orange-500/30 hover:bg-orange-500/10">
+                        <a
+                        href="#about"
+                        className="!px-6 inline-flex h-12 cursor-pointer items-center rounded-full border border-white/10 bg-white/5 px-6 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-orange-500/30 hover:bg-orange-500/10"
+                        >
                             Explore Systems
-                        </button>
+                        </a>
                     </div>
 
                     {/* Stats */}
@@ -97,7 +102,7 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2 }}
-                    className="relative flex h-[420px] w-full items-center justify-center sm:h-[520px] md:h-[620px] lg:h-[700px] lg:w-[60%]"
+                    className="relative flex h-[420px] w-full items-center justify-center sm:h-[400px] md:h-[420px] lg:h-[500px] lg:w-[60%]"
                 >
 
                     {/* Glow */}

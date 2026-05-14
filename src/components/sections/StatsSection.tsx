@@ -23,7 +23,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="relative overflow-hidden bg-black py-32">
+    <section className="relative overflow-hidden bg-black !py-24 sm:!py-16 md:!py-18 lg:!py-24 2xl:!py-24">
 
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ff5a1f10,transparent_40%)]" />
@@ -36,20 +36,20 @@ export default function StatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-24 max-w-4xl text-center"
+          className="mx-auto mb-24 max-w-4xl text-left"
         >
 
           <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-400">
             Trusted Across India
           </p>
 
-          <h2 className="font-heading text-5xl leading-[0.95] tracking-tight text-white md:text-7xl">
+          <h2 className="font-heading text-5xl leading-[0.95] tracking-tight text-white md:text-7xl !py-2">
             Built On Trust.
             <br />
             Engineered For Safety.
           </h2>
 
-          <p className="mt-8 text-lg leading-8 text-zinc-400">
+          <p className="mt-8 text-lg leading-8 text-zinc-400 !py-4">
             Delivering premium fire protection solutions with proven expertise,
             rapid emergency support and enterprise-grade engineering standards.
           </p>
@@ -68,7 +68,7 @@ export default function StatsSection() {
                 delay: index * 0.1,
               }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-white/[0.03] p-10 text-center backdrop-blur-xl transition-all duration-500 hover:border-orange-500/20 hover:bg-white/[0.05]"
+              className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-white/[0.03] !p-6 text-center backdrop-blur-xl transition-all duration-500 hover:border-orange-500/20 hover:bg-white/[0.05]"
             >
 
               {/* Glow */}

@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-black py-40">
+    <section className="relative overflow-hidden bg-black !py-32 sm:!py-16 md:!py-18 lg:!py-24 2xl:!py-24">
 
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ff5a1f15,transparent_35%)]" />
@@ -43,7 +43,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-[48px] border border-orange-500/10 bg-white/[0.03] px-8 py-24 text-center backdrop-blur-2xl md:px-16"
+          className="relative overflow-hidden rounded-[48px] border border-orange-500/10 bg-white/[0.03] !px-12 !py-12 text-center backdrop-blur-2xl md:px-16"
         >
 
           {/* Gradient Overlay */}
@@ -55,24 +55,24 @@ export default function CTASection() {
           </p>
 
           {/* Main Heading */}
-          <h2 className="font-heading relative z-10 mx-auto max-w-5xl text-5xl leading-[0.92] tracking-tight text-white md:text-7xl xl:text-[92px]">
+          <h2 className="font-heading relative z-10 mx-auto leading-[0.92] tracking-tight text-white md:text-7xl xl:text-[92px] !py-4">
             Protection That
             <br />
             Never Sleeps.
           </h2>
 
           {/* Description */}
-          <p className="relative z-10 mx-auto mt-10 max-w-3xl text-lg leading-8 text-zinc-400">
+          <p className="relative z-10 mx-auto mt-10 text-lg leading-8 text-zinc-400 !py-4">
             Partner with PyroShield to build enterprise-grade fire protection
             systems engineered for modern businesses, industrial facilities and
             mission-critical infrastructures across India.
           </p>
 
           {/* CTA Buttons */}
-          <div className="relative z-10 mt-14 flex flex-wrap items-center justify-center gap-5">
+          <div className="relative z-10 mt-14 flex flex-wrap items-center justify-center gap-5 !py-4">
 
             {/* Primary Button */}
-            <button className="group flex items-center gap-3 rounded-full bg-orange-500 px-8 py-5 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-400">
+            <button className="!px-6 group inline-flex h-12 cursor-pointer items-center gap-2 rounded-full bg-orange-500 px-6 text-sm font-medium text-white transition-all duration-300 hover:bg-orange-400 hover:shadow-[0_0_30px_rgba(255,90,31,0.35)]">
 
               Request Consultation
 
@@ -83,13 +83,19 @@ export default function CTASection() {
             </button>
 
             {/* Secondary Button */}
-            <button className="rounded-full border border-white/10 bg-white/[0.03] px-8 py-5 text-sm font-medium text-white backdrop-blur-xl transition-all duration-300 hover:border-orange-500/30 hover:bg-orange-500/10">
-              Explore Solutions
-            </button>
+            
+            <a
+              href="#about"
+              className="!px-6 inline-flex h-12 cursor-pointer items-center rounded-full border border-white/10 bg-white/5 px-6 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-orange-500/30 hover:bg-orange-500/10"
+              >
+                Explore Solutions
+              </a>
           </div>
 
           {/* Bottom Decorative Line */}
-          <div className="relative z-10 mx-auto mt-16 h-[1px] w-32 bg-gradient-to-r from-transparent via-orange-500/60 to-transparent" />
+          <div className="relative z-10 mt-16 flex justify-center">
+            <div className="h-[1px] w-32 bg-gradient-to-r from-transparent via-orange-500/60 to-transparent" />
+        </div>
         </motion.div>
       </div>
     </section>

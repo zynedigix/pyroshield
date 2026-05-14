@@ -32,7 +32,7 @@ const products = [
 
 export default function Products3DSection() {
   return (
-    <section className="relative overflow-hidden bg-black py-32">
+    <section id="products" className="relative overflow-hidden bg-black !py-24 sm:!py-16 md:!py-18 lg:!py-24 2xl:!py-24">
 
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#ff5a1f10,transparent_35%)]" />
@@ -45,20 +45,20 @@ export default function Products3DSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mx-auto mb-28 max-w-4xl text-center"
+          className="mx-auto mb-28 max-w-4xl text-left"
         >
 
           <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-400">
             Advanced Protection Products
           </p>
 
-          <h2 className="font-heading text-5xl leading-[0.95] tracking-tight text-white md:text-7xl">
+          <h2 className="font-heading text-5xl leading-[0.95] tracking-tight text-white md:text-7xl !py-4">
             Built For Critical
             <br />
             Fire Protection.
           </h2>
 
-          <p className="mt-8 text-lg leading-8 text-zinc-400">
+          <p className="mt-8 text-lg leading-8 text-zinc-400 !py-4">
             Enterprise-grade fire safety products engineered with intelligent
             technology, industrial durability and premium performance standards.
           </p>
@@ -92,13 +92,13 @@ export default function Products3DSection() {
               <div className="relative z-10 flex flex-col lg:flex-row">
 
                 {/* LEFT CONTENT */}
-                <div className="flex flex-1 flex-col justify-center p-10">
+                <div className="flex flex-1 flex-col justify-center !pl-10">
 
                   <p className="mb-5 text-sm uppercase tracking-[0.35em] text-orange-400">
                     Premium Equipment
                   </p>
 
-                  <h3 className="font-heading text-4xl leading-tight tracking-tight text-white md:text-5xl">
+                  <h3 className="font-heading text-4xl leading-tight tracking-tight text-white md:text-5xl !py-2">
                     {product.title}
                   </h3>
 

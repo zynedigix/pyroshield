@@ -20,7 +20,7 @@ const showcaseItems = [
 
 export default function StickyShowcase() {
   return (
-    <section className="relative bg-black">
+    <section className="relative bg-black !py-24 sm:!py-16 md:!py-18 lg:!py-24 2xl:!py-24">
 
       {/* SECTION HEADER */}
       <div className="container-custom py-32">
@@ -29,7 +29,7 @@ export default function StickyShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-3xl"
+          className="max-w-3xl text-left"
         >
           <p className="mb-6 text-sm uppercase tracking-[0.35em] text-orange-400">
             Advanced Fire Engineering
@@ -41,7 +41,7 @@ export default function StickyShowcase() {
             For Modern India.
           </h2>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
+          <p className="!pt-4 max-w-2xl text-lg leading-8 text-zinc-400 md:!pb-6">
             Premium fire and safety systems combining intelligent monitoring,
             industrial-grade engineering and rapid emergency readiness.
           </p>
@@ -64,7 +64,7 @@ export default function StickyShowcase() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#ff5a1f15,transparent_35%)]" />
 
               {/* Content */}
-              <div className="container-custom relative z-10 grid gap-16 lg:grid-cols-2">
+              <div className="container-custom relative z-10 grid gap-16 lg:grid-cols-2 md:!pt-32">
 
                 {/* LEFT SIDE */}
                 <motion.div
@@ -79,7 +79,7 @@ export default function StickyShowcase() {
                     {item.number}
                   </span>
 
-                  <h3 className="font-heading text-5xl leading-[1] tracking-tight text-white md:text-7xl">
+                  <h3 className="font-heading text-5xl leading-[1] tracking-tight text-white md:text-7xl sm:!pt-6px">
                     {item.title}
                   </h3>
 
@@ -94,7 +94,7 @@ export default function StickyShowcase() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="relative flex items-center justify-center"
+                  className="relative flex items-center justify-center md:!pb-32"
                 >
 
                   {/* Glow */}
@@ -107,7 +107,7 @@ export default function StickyShowcase() {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="h-full w-full object-cover scale-105 transition-transform duration-700 hover:scale-110"
+                      className="h-full w-full object-cover scale-105 transition-transform duration-700 hover:scale-110 !pb-6"
                     />
 
                     {/* Gradient overlay (keeps text readable) */}
@@ -118,7 +118,7 @@ export default function StickyShowcase() {
                       <p className="text-orange-400 text-sm tracking-widest">
                         {item.number}
                       </p>
-                      <h3 className="text-white text-xl font-semibold">
+                      <h3 className="text-white text-xl font-semibold !pl-6 !pb-6">
                         {item.title}
                       </h3>
                     </div>
