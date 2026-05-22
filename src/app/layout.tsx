@@ -15,9 +15,44 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "PyroShield | Premium Fire Protection",
+  title: "PyroShield — Cinematic 3D Industrial Safety Platform",
+
   description:
-    "Advanced fire safety systems engineered for industrial and commercial environments.",
+    "Immersive cinematic 3D industrial fire safety experience built with React and Three.js, featuring optimized GLB product visualization and premium enterprise storytelling.",
+
+  openGraph: {
+    title: "PyroShield — Cinematic 3D Industrial Safety Platform",
+
+    description:
+      "Immersive cinematic 3D industrial fire safety experience built with React and Three.js.",
+
+    url: "https://pyroshield.vercel.app",
+
+    siteName: "PyroShield",
+
+    images: [
+      {
+        url: "/preview.jpg",
+        width: 1200,
+        height: 752,
+        alt: "PyroShield Industrial Safety Platform",
+      },
+    ],
+
+    locale: "en_US",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "PyroShield — Cinematic 3D Industrial Safety Platform",
+
+    description:
+      "Immersive cinematic industrial safety storytelling experience.",
+
+    images: ["/preview.jpg"],
+  },
 };
 
 export default function RootLayout({
